@@ -655,12 +655,12 @@ class Talk_To_Motive():
                     this_time_C = self.Local_GRN(this_time_rigidbody, this_time_target, chosen_obs)
                     print("this_time_self_C", this_time_C)
                     # 预测不同方向的下一步的浓度值
-                    predict_c_angel = [-45, -30, -15, 0, 15, 30, 45]
+                    predict_c_angel = [-90, -45, -30, -15, 0, 15, 30, 45, 90]
                     predict_c = [0 for i in range(len(predict_c_angel))]  # 浓度
                     predict_c_differ = [0 for i in range(len(predict_c_angel))]
 
                     # print(this_time_rigidbody,this_time_target,chosen_obs)
-                    for i in range(len(predict_c_angel)):  # 计算预测的三个点到目标的距离
+                    for i in range(len(predict_c_angel)):  # 计算预测点到目标的距离
                         predict_rigidbody = self.Predict_rigidbody(predict_c_angel[i], this_time_rigidbody)
                         # predict_self_target_distance[i] = self.Cal_predict_self_target_distance(predict_c_angel[i], this_time_rigidbody, this_time_target)
                         # pridict_self_obs_distance[i] = self.Cal_predict_self_obs_distance(predict_c_angel[i], this_time_rigidbody, detected_obss)
